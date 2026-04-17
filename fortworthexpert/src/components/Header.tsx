@@ -38,9 +38,9 @@ export default function Header() {
   return (
     <>
       {/* TOP BAR */}
-      <div className="bg-black text-text-muted text-xs py-2 relative z-[60] border-b border-border">
+      <div className="bg-bronze text-white/90 text-xs py-2 relative z-[60]">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 flex justify-between items-center">
-          <span className="hidden sm:flex items-center gap-1.5 font-medium tracking-[0.1em] uppercase">
+          <span className="hidden sm:flex items-center gap-1.5 font-medium tracking-[0.15em] uppercase">
             <Zap size={12} className="text-gold-bright" /> Fort Worth&apos;s Premier Automotive Locksmith
           </span>
           <div className="flex gap-5 items-center mx-auto sm:mx-0">
@@ -58,14 +58,14 @@ export default function Header() {
       <motion.header
         className={`sticky top-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-base/80 backdrop-blur-xl border-b border-border shadow-[0_4px_30px_rgba(0,0,0,0.4)]'
-            : 'bg-base/60 backdrop-blur-md border-b border-transparent'
+            ? 'bg-base/90 backdrop-blur-xl border-b border-border shadow-[0_2px_20px_rgba(44,44,44,0.06)]'
+            : 'bg-base/70 backdrop-blur-md border-b border-transparent'
         }`}
       >
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 flex items-center justify-between h-[72px]">
           <Link href="/" className="flex flex-col group">
-            <span className="font-serif text-xl font-bold text-text tracking-tight group-hover:text-gold-bright transition-colors">Fort Worth Expert</span>
-            <span className="text-[10px] text-gold-bright tracking-[0.2em] uppercase -mt-0.5 font-semibold">Automotive Locksmith</span>
+            <span className="font-serif text-xl font-bold text-text tracking-tight group-hover:text-bronze transition-colors">Fort Worth Expert</span>
+            <span className="text-[10px] text-bronze tracking-[0.22em] uppercase -mt-0.5 font-semibold">Automotive Locksmith</span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-7">
@@ -84,9 +84,9 @@ export default function Header() {
                         transition={{ duration: 0.2 }}
                         className="absolute top-full left-0 pt-2 w-72"
                       >
-                        <div className="panel-dark py-2 shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+                        <div className="panel-dark py-2 shadow-[0_20px_40px_rgba(44,44,44,0.12)]">
                           {item.children.map((child) => (
-                            <Link key={child.href} href={child.href} className="block px-4 py-2.5 text-sm text-text-muted hover:text-gold-bright hover:bg-white/[0.03] transition-colors">
+                            <Link key={child.href} href={child.href} className="block px-4 py-2.5 text-sm text-text-muted hover:text-bronze hover:bg-gold-subtle transition-colors">
                               {child.label}
                             </Link>
                           ))}
@@ -123,21 +123,21 @@ export default function Header() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden bg-base/95 backdrop-blur-xl border-t border-border overflow-hidden"
+              className="lg:hidden bg-panel backdrop-blur-xl border-t border-border overflow-hidden"
             >
               <div className="px-4 py-4 space-y-1">
                 {navItems.map((item) => (
                   item.children ? (
                     <div key={item.label}>
-                      <div className="py-2.5 text-xs font-semibold text-gold-bright tracking-[0.15em] uppercase">{item.label}</div>
+                      <div className="py-2.5 text-xs font-semibold text-bronze tracking-[0.18em] uppercase">{item.label}</div>
                       {item.children.map((child) => (
-                        <Link key={child.href} href={child.href} onClick={() => setMobileOpen(false)} className="block pl-4 py-2 text-sm text-text-muted hover:text-text">
+                        <Link key={child.href} href={child.href} onClick={() => setMobileOpen(false)} className="block pl-4 py-2 text-sm text-text-muted hover:text-bronze">
                           {child.label}
                         </Link>
                       ))}
                     </div>
                   ) : (
-                    <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm font-medium text-text hover:text-gold-bright">
+                    <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm font-medium text-text hover:text-bronze">
                       {item.label}
                     </Link>
                   )

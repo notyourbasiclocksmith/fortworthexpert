@@ -37,13 +37,13 @@ const areaLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-elevated border-t border-border text-text-muted relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-40" />
-      <div className="max-w-7xl mx-auto px-4 pt-16 pb-8">
+    <footer className="bg-bronze text-white/80 relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-px bg-gradient-to-r from-transparent via-gold-bright to-transparent opacity-60" />
+      <div className="max-w-[1280px] mx-auto px-6 md:px-10 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
             <h3 className="font-serif text-xl font-bold text-white mb-1">Fort Worth Expert</h3>
-            <p className="text-xs tracking-[0.15em] uppercase text-gold mb-4">Automotive Locksmith</p>
+            <p className="text-xs tracking-[0.22em] uppercase text-gold-bright mb-4">Automotive Locksmith</p>
             <p className="text-sm leading-relaxed mb-6 text-white/50">
               Advanced car key programming, immobilizer diagnostics, and mobile locksmith services throughout Fort Worth and surrounding areas.
             </p>

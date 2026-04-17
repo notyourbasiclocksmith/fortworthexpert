@@ -52,10 +52,10 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
     <>
       {/* ════════ HERO ════════ */}
       <section className="hero-gradient grid-bg relative overflow-hidden flex items-center min-h-[calc(100vh-104px)]">
-        {/* Ambient glow layers */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-gold/[0.06] blur-[220px] pointer-events-none animate-pulse-glow" />
-        <div className="absolute top-[15%] left-[20%] w-[340px] h-[340px] rounded-full bg-gold/8 blur-[130px] pointer-events-none animate-float" />
-        <div className="absolute bottom-[10%] right-[20%] w-[300px] h-[300px] rounded-full bg-gold/5 blur-[110px] pointer-events-none animate-float-delayed" />
+        {/* Ambient warm light layers */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-gold/[0.15] blur-[220px] pointer-events-none animate-pulse-glow" />
+        <div className="absolute top-[15%] left-[20%] w-[340px] h-[340px] rounded-full bg-gold/20 blur-[130px] pointer-events-none animate-float" />
+        <div className="absolute bottom-[10%] right-[20%] w-[300px] h-[300px] rounded-full bg-bronze/[0.08] blur-[110px] pointer-events-none animate-float-delayed" />
 
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-10 py-16 md:py-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
@@ -68,7 +68,7 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
                 className="flex items-center gap-2.5 mb-5"
               >
                 <span className="status-dot" />
-                <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-gold-bright">Fort Worth TX — Mobile Service Available Now</span>
+                <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-bronze">Fort Worth TX — Mobile Service Available Now</span>
               </motion.div>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -106,8 +106,8 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
                 className="grid grid-cols-2 sm:grid-cols-4 gap-2.5"
               >
                 {trust.map((t) => (
-                  <div key={t.label} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl border border-border bg-white/[0.02] hover:border-gold/30 transition-colors">
-                    <CheckCircle2 size={14} className="text-gold-bright shrink-0" />
+                  <div key={t.label} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl border border-border bg-panel hover:border-gold/50 hover:shadow-sm transition-all">
+                    <CheckCircle2 size={14} className="text-gold-deep shrink-0" />
                     <div className="text-[12px] font-medium text-text leading-tight">{t.label}</div>
                   </div>
                 ))}
@@ -122,13 +122,13 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
               className="relative lg:pl-4"
             >
               {/* Decorative glow behind panel */}
-              <div className="absolute -inset-6 rounded-[28px] bg-gradient-to-br from-gold/10 via-transparent to-gold/5 blur-2xl pointer-events-none" />
+              <div className="absolute -inset-6 rounded-[28px] bg-gradient-to-br from-gold/20 via-transparent to-bronze/10 blur-2xl pointer-events-none" />
               <div className="panel-dark scan-line grid-fine p-6 md:p-7 relative max-w-[520px] mx-auto lg:mx-0 lg:ml-auto">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-5 pb-4 border-b border-border">
                   <div className="flex items-center gap-2.5">
-                    <Activity size={16} className="text-gold-bright" />
-                    <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-text-muted">Diagnostic Session</span>
+                    <Activity size={16} className="text-bronze" />
+                    <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-bronze">Diagnostic Session</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="status-dot" />
@@ -139,7 +139,7 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
                 <div className="font-mono text-[11px] text-text-dim mb-5 leading-relaxed space-y-1">
                   <div className="flex justify-between"><span>VEHICLE.ID</span><span className="text-text-muted">█████-AUTH</span></div>
                   <div className="flex justify-between"><span>PROTOCOL</span><span className="text-text-muted">CAN / UDS</span></div>
-                  <div className="flex justify-between"><span>SESSION</span><span className="text-gold-bright">SECURE</span></div>
+                  <div className="flex justify-between"><span>SESSION</span><span className="text-bronze font-semibold">SECURE</span></div>
                 </div>
                 {/* Module statuses */}
                 <div className="space-y-2.5 mb-5">
@@ -154,13 +154,13 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.8 + i * 0.1 }}
-                      className="flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.02] border border-border"
+                      className="flex items-center gap-3 p-2.5 rounded-lg bg-cream border border-border"
                     >
-                      <div className="w-8 h-8 rounded-md bg-gold-subtle border border-gold/20 flex items-center justify-center shrink-0">
-                        <row.icon size={14} className="text-gold-bright" />
+                      <div className="w-8 h-8 rounded-md bg-gold-subtle border border-gold/25 flex items-center justify-center shrink-0">
+                        <row.icon size={14} className="text-bronze" />
                       </div>
                       <span className="text-sm text-text flex-1">{row.k}</span>
-                      <span className="font-mono text-[10px] font-bold text-[#34D399] px-2 py-0.5 rounded bg-[#34D399]/10 border border-[#34D399]/20">{row.v}</span>
+                      <span className="font-mono text-[10px] font-bold text-[#4F7A3A] px-2 py-0.5 rounded bg-[#4F7A3A]/10 border border-[#4F7A3A]/25">{row.v}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -168,7 +168,7 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
                 <div className="pt-4 border-t border-border">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[10px] font-mono uppercase tracking-wider text-text-dim">Signal Strength</span>
-                    <span className="text-[10px] font-mono text-gold-bright">98%</span>
+                    <span className="text-[10px] font-mono text-bronze font-semibold">98%</span>
                   </div>
                   <div className="flex items-end justify-between gap-1 h-9">
                     {[0.3, 0.6, 0.45, 0.8, 0.55, 0.9, 0.7, 1, 0.85, 0.6, 0.75, 0.5, 0.9, 0.65, 0.4, 0.7, 0.85].map((h, i) => (
@@ -191,7 +191,7 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
 
       {/* ════════ SERVICES ════════ */}
       <section className="section-padding bg-elevated relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-gold/4 blur-[200px] pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-gold/15 blur-[200px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <ScrollReveal className="text-center mb-14">
             <div className="eyebrow justify-center mb-4">Services</div>
@@ -205,14 +205,14 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
             {services.map(({ label, href, icon: Icon, desc }) => (
               <StaggerItem key={href}>
                 <Link href={href} className="glass-card group flex flex-col gap-4 h-full">
-                  <div className="w-11 h-11 rounded-xl bg-gold-subtle border border-gold/20 flex items-center justify-center">
-                    <Icon size={20} className="text-gold-bright" />
+                  <div className="w-11 h-11 rounded-xl bg-gold-subtle border border-gold/30 flex items-center justify-center">
+                    <Icon size={20} className="text-bronze" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-serif text-lg font-semibold text-text mb-1.5 group-hover:text-gold-bright transition-colors">{label}</h3>
+                    <h3 className="font-serif text-lg font-semibold text-text mb-1.5 group-hover:text-bronze transition-colors">{label}</h3>
                     <p className="text-sm text-text-muted leading-relaxed">{desc}</p>
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-gold tracking-wide uppercase">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-bronze tracking-wide uppercase">
                     Learn more <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
@@ -229,32 +229,32 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-base via-elevated to-base" />
         <div className="absolute inset-0 grid-fine opacity-30" />
-        <div className="max-w-7xl mx-auto px-4 py-20 md:py-24 relative z-10">
-          <div className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-border">
-            <ScrollReveal direction="right" className="p-8 md:p-10 bg-base/60 backdrop-blur-sm border-r border-border">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10 py-20 md:py-24 relative z-10">
+          <div className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-border shadow-[0_20px_60px_rgba(44,44,44,0.06)]">
+            <ScrollReveal direction="right" className="p-8 md:p-10 bg-panel border-r border-border">
               <div className="flex items-center gap-2 mb-4">
-                <AlertTriangle size={18} className="text-[#F87171]" />
-                <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#F87171]">The Problem</span>
+                <AlertTriangle size={18} className="text-[#B5523A]" />
+                <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-[#B5523A]">The Problem</span>
               </div>
-              <h3 className="font-serif text-2xl md:text-3xl font-bold text-text mb-4">Dealerships Take Days. Tow Bills Stack Up.</h3>
+              <h3 className="font-serif text-2xl md:text-3xl font-bold text-text mb-4 leading-tight">Dealerships Take Days. Tow Bills Stack Up.</h3>
               <p className="text-text-muted leading-relaxed mb-4">Lost your keys? Immobilizer light on? Most shops either can&apos;t program modern smart keys at all, or make you wait a week for a dealer appointment — after a costly tow.</p>
               <ul className="space-y-2 text-sm text-text-muted">
-                <li className="flex items-start gap-2"><span className="text-[#F87171] mt-1">✕</span> 3–7 day dealer wait times</li>
-                <li className="flex items-start gap-2"><span className="text-[#F87171] mt-1">✕</span> $150–$400 tow bill before you even start</li>
-                <li className="flex items-start gap-2"><span className="text-[#F87171] mt-1">✕</span> Generic locksmiths who can&apos;t program smart keys</li>
+                <li className="flex items-start gap-2"><span className="text-[#B5523A] mt-1">✕</span> 3–7 day dealer wait times</li>
+                <li className="flex items-start gap-2"><span className="text-[#B5523A] mt-1">✕</span> $150–$400 tow bill before you even start</li>
+                <li className="flex items-start gap-2"><span className="text-[#B5523A] mt-1">✕</span> Generic locksmiths who can&apos;t program smart keys</li>
               </ul>
             </ScrollReveal>
-            <ScrollReveal direction="left" className="p-8 md:p-10 bg-gradient-to-br from-gold-subtle via-elevated to-base">
+            <ScrollReveal direction="left" className="p-8 md:p-10 bg-gradient-to-br from-[#F2EBDA] via-elevated to-cream">
               <div className="flex items-center gap-2 mb-4">
-                <CheckCircle2 size={18} className="text-gold-bright" />
-                <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-gold-bright">Our Solution</span>
+                <CheckCircle2 size={18} className="text-bronze" />
+                <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-bronze">Our Solution</span>
               </div>
-              <h3 className="font-serif text-2xl md:text-3xl font-bold text-text mb-4">Mobile. Same-Day. Dealer-Grade.</h3>
+              <h3 className="font-serif text-2xl md:text-3xl font-bold text-text mb-4 leading-tight">Mobile. Same-Day. Dealer-Grade.</h3>
               <p className="text-text-muted leading-relaxed mb-4">We bring OEM programming equipment to your location and handle everything on-site — from cutting blanks to writing keys into the vehicle&apos;s security module.</p>
               <ul className="space-y-2 text-sm text-text-muted">
-                <li className="flex items-start gap-2"><CheckCircle2 size={14} className="text-gold-bright mt-1 shrink-0" /> Same-day response throughout Fort Worth</li>
-                <li className="flex items-start gap-2"><CheckCircle2 size={14} className="text-gold-bright mt-1 shrink-0" /> No tow — we come to your vehicle</li>
-                <li className="flex items-start gap-2"><CheckCircle2 size={14} className="text-gold-bright mt-1 shrink-0" /> Upfront pricing, transparent quotes</li>
+                <li className="flex items-start gap-2"><CheckCircle2 size={14} className="text-bronze mt-1 shrink-0" /> Same-day response throughout Fort Worth</li>
+                <li className="flex items-start gap-2"><CheckCircle2 size={14} className="text-bronze mt-1 shrink-0" /> No tow — we come to your vehicle</li>
+                <li className="flex items-start gap-2"><CheckCircle2 size={14} className="text-bronze mt-1 shrink-0" /> Upfront pricing, transparent quotes</li>
               </ul>
             </ScrollReveal>
           </div>
@@ -263,8 +263,8 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
 
       {/* ════════ ADVANCED DIAGNOSTICS ════════ */}
       <section className="section-padding relative overflow-hidden">
-        <div className="absolute inset-0 grid-fine opacity-40 pointer-events-none" />
-        <div className="absolute top-20 right-0 w-[600px] h-[600px] rounded-full bg-gold/5 blur-[200px] pointer-events-none" />
+        <div className="absolute inset-0 grid-fine opacity-60 pointer-events-none" />
+        <div className="absolute top-20 right-0 w-[600px] h-[600px] rounded-full bg-gold/15 blur-[200px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 items-start mb-14">
             <ScrollReveal direction="right" className="lg:col-span-5">
@@ -280,14 +280,14 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
             <StaggerContainer className="lg:col-span-7 grid sm:grid-cols-2 gap-4" staggerDelay={0.12}>
               {diagnostics.map(({ icon: Icon, label, desc, status }) => (
                 <StaggerItem key={label}>
-                  <div className="panel-dark p-5 md:p-6 h-full group hover:border-gold/30 transition-colors">
+                  <div className="panel-dark p-5 md:p-6 h-full group hover:border-gold/50 transition-all">
                     <div className="flex items-start justify-between mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-gold-subtle border border-gold/20 flex items-center justify-center">
-                        <Icon size={18} className="text-gold-bright" />
+                      <div className="w-10 h-10 rounded-lg bg-gold-subtle border border-gold/30 flex items-center justify-center">
+                        <Icon size={18} className="text-bronze" />
                       </div>
-                      <span className="font-mono text-[9px] font-bold tracking-wider text-[#34D399] px-2 py-1 rounded bg-[#34D399]/10 border border-[#34D399]/20">{status}</span>
+                      <span className="font-mono text-[9px] font-bold tracking-wider text-[#4F7A3A] px-2 py-1 rounded bg-[#4F7A3A]/10 border border-[#4F7A3A]/25">{status}</span>
                     </div>
-                    <h3 className="font-serif text-lg font-semibold text-text mb-2 group-hover:text-gold-bright transition-colors">{label}</h3>
+                    <h3 className="font-serif text-lg font-semibold text-text mb-2 group-hover:text-bronze transition-colors">{label}</h3>
                     <p className="text-sm text-text-muted leading-relaxed">{desc}</p>
                   </div>
                 </StaggerItem>
@@ -299,7 +299,7 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
 
       {/* ════════ WHY CHOOSE US ════════ */}
       <section className="section-padding bg-elevated relative overflow-hidden">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gold/4 blur-[180px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gold/15 blur-[180px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <ScrollReveal className="text-center mb-14">
             <div className="eyebrow justify-center mb-4">Why Fort Worth Trusts Us</div>
@@ -311,8 +311,8 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
             {whyUs.map(({ icon: Icon, label, desc }) => (
               <StaggerItem key={label}>
                 <div className="glass-card flex gap-4 h-full">
-                  <div className="w-11 h-11 rounded-xl bg-gold-subtle border border-gold/20 flex items-center justify-center shrink-0">
-                    <Icon size={20} className="text-gold-bright" />
+                  <div className="w-11 h-11 rounded-xl bg-gold-subtle border border-gold/30 flex items-center justify-center shrink-0">
+                    <Icon size={20} className="text-bronze" />
                   </div>
                   <div>
                     <h3 className="font-serif text-lg font-semibold text-text mb-1.5">{label}</h3>
@@ -327,7 +327,7 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
 
       {/* ════════ BRANDS ════════ */}
       <section className="section-padding relative overflow-hidden">
-        <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-gold/4 blur-[180px] -translate-y-1/2 pointer-events-none" />
+        <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-gold/12 blur-[180px] -translate-y-1/2 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <ScrollReveal className="text-center mb-12">
             <div className="eyebrow justify-center mb-4">Vehicles We Service</div>
@@ -339,9 +339,9 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
               <StaggerItem key={brand}>
                 <Link
                   href={`/brands/${brand.toLowerCase().replace(/[\s-]+/g, '-')}`}
-                  className="panel-dark p-4 text-center block group hover:border-gold/30 transition-all"
+                  className="panel-dark p-4 text-center block group hover:border-gold/50 transition-all"
                 >
-                  <span className="text-sm font-semibold text-text-muted group-hover:text-gold-bright transition-colors">{brand}</span>
+                  <span className="text-sm font-semibold text-text-muted group-hover:text-bronze transition-colors">{brand}</span>
                 </Link>
               </StaggerItem>
             ))}
@@ -354,7 +354,7 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
 
       {/* ════════ FAQ ════════ */}
       <section className="section-padding bg-elevated relative overflow-hidden">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-gold/4 blur-[200px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-gold/12 blur-[200px] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-4 relative z-10">
           <ScrollReveal className="text-center mb-10">
             <div className="eyebrow justify-center mb-4">FAQ</div>
@@ -381,7 +381,7 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
                     transition={{ duration: 0.3 }}
                     className="shrink-0"
                   >
-                    <ChevronRight size={18} className="text-gold-bright" />
+                    <ChevronRight size={18} className="text-bronze" />
                   </motion.div>
                 </button>
                 <AnimatePresence initial={false}>
@@ -416,8 +416,8 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
           <StaggerContainer className="flex flex-wrap justify-center gap-2.5 mb-10" staggerDelay={0.03}>
             {['Fort Worth', 'Arlington', 'North Richland Hills', 'Grapevine', 'Keller', 'Hurst', 'Bedford', 'Euless', 'Southlake', 'Colleyville'].map((city) => (
               <StaggerItem key={city}>
-                <Link href={`/service-areas/${city.toLowerCase().replace(/\s+/g, '-')}`} className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-border bg-panel text-sm text-text-muted hover:border-gold/40 hover:text-gold-bright transition-all">
-                  <MapPin size={12} className="text-gold" /> {city}
+                <Link href={`/service-areas/${city.toLowerCase().replace(/\s+/g, '-')}`} className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-border bg-panel text-sm text-text-muted hover:border-gold/60 hover:text-bronze transition-all">
+                  <MapPin size={12} className="text-bronze" /> {city}
                 </Link>
               </StaggerItem>
             ))}
@@ -428,9 +428,9 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
 
       {/* ════════ FINAL CTA ════════ */}
       <section className="relative overflow-hidden py-24 md:py-32 text-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-base via-elevated to-base" />
-        <div className="absolute inset-0 grid-bg opacity-40" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-gold/10 blur-[220px] pointer-events-none animate-pulse-glow" />
+        <div className="absolute inset-0 bg-gradient-to-br from-base via-elevated to-[#F2EBDA]" />
+        <div className="absolute inset-0 grid-bg opacity-60" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-gold/25 blur-[220px] pointer-events-none animate-pulse-glow" />
         <div className="max-w-3xl mx-auto px-4 relative z-10">
           <ScrollReveal>
             <div className="glow-line mx-auto mb-6" />
@@ -457,7 +457,7 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
               </motion.a>
             </div>
             <div className="flex items-center justify-center gap-2 text-sm text-text-dim">
-              <Lock size={14} className="text-gold" /> Licensed & insured — Fort Worth, TX
+              <Lock size={14} className="text-bronze" /> Licensed & insured — Fort Worth, TX
             </div>
           </ScrollReveal>
         </div>
