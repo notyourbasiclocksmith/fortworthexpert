@@ -51,100 +51,92 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
   return (
     <>
       {/* ════════ HERO ════════ */}
-      <section className="hero-gradient grid-bg relative overflow-hidden min-h-[92vh] flex items-center">
-        {/* Ambient glow orbs */}
-        <div className="absolute top-10 left-[5%] w-[500px] h-[500px] rounded-full bg-gold/8 blur-[130px] pointer-events-none animate-float" />
-        <div className="absolute bottom-0 right-[8%] w-[420px] h-[420px] rounded-full bg-gold/5 blur-[120px] pointer-events-none animate-float-delayed" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gold/4 blur-[200px] pointer-events-none animate-pulse-glow" />
+      <section className="hero-gradient grid-bg relative overflow-hidden flex items-center min-h-[calc(100vh-104px)]">
+        {/* Ambient glow layers */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-gold/[0.06] blur-[220px] pointer-events-none animate-pulse-glow" />
+        <div className="absolute top-[15%] left-[20%] w-[340px] h-[340px] rounded-full bg-gold/8 blur-[130px] pointer-events-none animate-float" />
+        <div className="absolute bottom-[10%] right-[20%] w-[300px] h-[300px] rounded-full bg-gold/5 blur-[110px] pointer-events-none animate-float-delayed" />
 
-        <div className="max-w-7xl mx-auto px-4 py-20 md:py-24 relative z-10 w-full">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            {/* LEFT — headline */}
-            <div className="lg:col-span-7">
+        <div className="w-full max-w-[1280px] mx-auto px-6 md:px-10 py-16 md:py-20 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
+            {/* LEFT — copy */}
+            <div className="max-w-xl lg:max-w-none">
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="flex items-center gap-2.5 mb-5"
+              >
+                <span className="status-dot" />
+                <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-gold-bright">Fort Worth TX — Mobile Service Available Now</span>
+              </motion.div>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.15 }}
+                className="font-serif font-bold tracking-tight text-[clamp(2.25rem,4.8vw,3.75rem)] leading-[1.04] mb-6"
+              >
+                Advanced Car Key Programming
+                <br />
+                <span className="gradient-text">& Automotive Locksmith</span>
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="text-base md:text-lg text-text-muted leading-relaxed mb-8 max-w-[560px]"
+              >
+                Dealer-level diagnostics, immobilizer repair, key replacement, and same-day mobile service for modern vehicles in Fort Worth, TX.
+              </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="flex items-center gap-3 mb-6"
-              >
-                <span className="status-dot" />
-                <span className="eyebrow">Fort Worth TX — Mobile Service Available Now</span>
-              </motion.div>
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: 56 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="glow-line mb-6"
-              />
-              <motion.h1
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="font-serif text-4xl md:text-5xl lg:text-[3.6rem] font-bold leading-[1.05] mb-6"
-              >
-                Advanced Car Key Programming <br className="hidden md:block" />
-                <span className="gradient-text">& Automotive Locksmith</span>
-                <br />
-                <span className="text-text-muted text-3xl md:text-4xl lg:text-[2.4rem] font-normal">Experts in Fort Worth, TX</span>
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.5 }}
-                className="text-lg md:text-xl text-text-muted leading-relaxed mb-8 max-w-xl"
-              >
-                Lost your keys? Car won&apos;t start? Same-day mobile service for key replacement, programming, immobilizer diagnostics, and advanced vehicle security.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.7 }}
+                transition={{ duration: 0.7, delay: 0.45 }}
                 className="flex flex-wrap gap-3 mb-10"
               >
-                <a href="tel:8178421751" className="btn-primary"><Phone size={17} /> Call 817-842-1751</a>
+                <a href="tel:8178421751" className="btn-primary"><Phone size={17} /> Call Now</a>
                 <a href="sms:8175869634" className="btn-secondary"><MessageSquare size={17} /> Text Us</a>
                 <Link href="/contact" className="btn-gold">Get a Quote</Link>
               </motion.div>
-              {/* Trust chips */}
+              {/* Trust badges */}
               <motion.div
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.9 }}
-                className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl"
+                transition={{ duration: 0.7, delay: 0.6 }}
+                className="grid grid-cols-2 sm:grid-cols-4 gap-2.5"
               >
                 {trust.map((t) => (
-                  <div key={t.label} className="glass-card !p-3 !rounded-xl flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(212,175,55,0.7)] shrink-0" />
-                    <div>
-                      <div className="text-[13px] font-semibold text-text leading-tight">{t.label}</div>
-                      <div className="text-[11px] text-text-dim">{t.desc}</div>
-                    </div>
+                  <div key={t.label} className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl border border-border bg-white/[0.02] hover:border-gold/30 transition-colors">
+                    <CheckCircle2 size={14} className="text-gold-bright shrink-0" />
+                    <div className="text-[12px] font-medium text-text leading-tight">{t.label}</div>
                   </div>
                 ))}
               </motion.div>
             </div>
 
-            {/* RIGHT — diagnostic panel visual */}
+            {/* RIGHT — diagnostic visual */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.9, delay: 0.5 }}
-              className="lg:col-span-5"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.4 }}
+              className="relative lg:pl-4"
             >
-              <div className="panel-dark scan-line grid-fine p-6 md:p-7 relative">
+              {/* Decorative glow behind panel */}
+              <div className="absolute -inset-6 rounded-[28px] bg-gradient-to-br from-gold/10 via-transparent to-gold/5 blur-2xl pointer-events-none" />
+              <div className="panel-dark scan-line grid-fine p-6 md:p-7 relative max-w-[520px] mx-auto lg:mx-0 lg:ml-auto">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-5 pb-4 border-b border-border">
                   <div className="flex items-center gap-2.5">
                     <Activity size={16} className="text-gold-bright" />
-                    <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-text-muted">Diagnostic Interface</span>
+                    <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-text-muted">Diagnostic Session</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="status-dot" />
-                    <span className="text-[10px] font-mono text-text-dim">ONLINE</span>
+                    <span className="text-[10px] font-mono text-text-dim">LIVE</span>
                   </div>
                 </div>
-                {/* Vehicle ID row */}
-                <div className="font-mono text-[11px] text-text-dim mb-5 leading-relaxed">
+                {/* Session info */}
+                <div className="font-mono text-[11px] text-text-dim mb-5 leading-relaxed space-y-1">
                   <div className="flex justify-between"><span>VEHICLE.ID</span><span className="text-text-muted">█████-AUTH</span></div>
                   <div className="flex justify-between"><span>PROTOCOL</span><span className="text-text-muted">CAN / UDS</span></div>
                   <div className="flex justify-between"><span>SESSION</span><span className="text-gold-bright">SECURE</span></div>
@@ -152,19 +144,19 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
                 {/* Module statuses */}
                 <div className="space-y-2.5 mb-5">
                   {[
-                    { k: 'Immobilizer', v: 'OK', icon: Shield },
+                    { k: 'Immobilizer Module', v: 'OK', icon: Shield },
                     { k: 'Key Authentication', v: 'OK', icon: Key },
-                    { k: 'ECU Comms', v: 'OK', icon: Radio },
+                    { k: 'ECU Communication', v: 'OK', icon: Radio },
                     { k: 'Programming', v: 'READY', icon: Zap },
                   ].map((row, i) => (
                     <motion.div
                       key={row.k}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: 0.9 + i * 0.12 }}
+                      transition={{ duration: 0.5, delay: 0.8 + i * 0.1 }}
                       className="flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.02] border border-border"
                     >
-                      <div className="w-8 h-8 rounded-md bg-gold-subtle border border-gold/20 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-md bg-gold-subtle border border-gold/20 flex items-center justify-center shrink-0">
                         <row.icon size={14} className="text-gold-bright" />
                       </div>
                       <span className="text-sm text-text flex-1">{row.k}</span>
@@ -173,17 +165,23 @@ export default function HomepageClient({ faqItems }: { faqItems: { question: str
                   ))}
                 </div>
                 {/* Signal bars */}
-                <div className="pt-4 border-t border-border flex items-end justify-between gap-1 h-10">
-                  {[0.3, 0.6, 0.45, 0.8, 0.55, 0.9, 0.7, 1, 0.85, 0.6, 0.75, 0.5, 0.9, 0.65, 0.4].map((h, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ scaleY: 0 }}
-                      animate={{ scaleY: h }}
-                      transition={{ duration: 0.5, delay: 1.4 + i * 0.04, ease: 'easeOut' }}
-                      className="flex-1 bg-gradient-to-t from-gold-deep to-gold-bright rounded-sm origin-bottom"
-                      style={{ height: '100%' }}
-                    />
-                  ))}
+                <div className="pt-4 border-t border-border">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-text-dim">Signal Strength</span>
+                    <span className="text-[10px] font-mono text-gold-bright">98%</span>
+                  </div>
+                  <div className="flex items-end justify-between gap-1 h-9">
+                    {[0.3, 0.6, 0.45, 0.8, 0.55, 0.9, 0.7, 1, 0.85, 0.6, 0.75, 0.5, 0.9, 0.65, 0.4, 0.7, 0.85].map((h, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ scaleY: 0 }}
+                        animate={{ scaleY: h }}
+                        transition={{ duration: 0.5, delay: 1.3 + i * 0.03, ease: 'easeOut' }}
+                        className="flex-1 bg-gradient-to-t from-gold-deep to-gold-bright rounded-sm origin-bottom"
+                        style={{ height: '100%' }}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>

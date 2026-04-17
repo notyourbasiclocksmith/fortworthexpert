@@ -38,8 +38,8 @@ export default function Header() {
   return (
     <>
       {/* TOP BAR */}
-      <div className="bg-black text-text-muted text-xs py-2 px-4 relative z-[60] border-b border-border">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="bg-black text-text-muted text-xs py-2 relative z-[60] border-b border-border">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10 flex justify-between items-center">
           <span className="hidden sm:flex items-center gap-1.5 font-medium tracking-[0.1em] uppercase">
             <Zap size={12} className="text-gold-bright" /> Fort Worth&apos;s Premier Automotive Locksmith
           </span>
@@ -62,7 +62,7 @@ export default function Header() {
             : 'bg-base/60 backdrop-blur-md border-b border-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-[72px]">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10 flex items-center justify-between h-[72px]">
           <Link href="/" className="flex flex-col group">
             <span className="font-serif text-xl font-bold text-text tracking-tight group-hover:text-gold-bright transition-colors">Fort Worth Expert</span>
             <span className="text-[10px] text-gold-bright tracking-[0.2em] uppercase -mt-0.5 font-semibold">Automotive Locksmith</span>
