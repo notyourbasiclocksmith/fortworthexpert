@@ -38,17 +38,17 @@ export default function Header() {
   return (
     <>
       {/* TOP BAR */}
-      <div className="bg-charcoal text-white text-sm py-2 px-4 relative z-[60]">
+      <div className="bg-black text-text-muted text-xs py-2 px-4 relative z-[60] border-b border-border">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <span className="hidden sm:flex items-center gap-1.5 font-light tracking-wide">
-            <Zap size={13} className="text-gold" /> Fort Worth&apos;s Premier Automotive Locksmith
+          <span className="hidden sm:flex items-center gap-1.5 font-medium tracking-[0.1em] uppercase">
+            <Zap size={12} className="text-gold-bright" /> Fort Worth&apos;s Premier Automotive Locksmith
           </span>
           <div className="flex gap-5 items-center mx-auto sm:mx-0">
-            <a href="tel:8178421751" className="flex items-center gap-1.5 hover:text-gold transition-colors">
-              <Phone size={14} /> 817-842-1751
+            <a href="tel:8178421751" className="flex items-center gap-1.5 hover:text-gold-bright transition-colors">
+              <Phone size={13} /> 817-842-1751
             </a>
-            <a href="sms:8175869634" className="flex items-center gap-1.5 hover:text-gold transition-colors">
-              <MessageSquare size={14} /> Text: 817-586-9634
+            <a href="sms:8175869634" className="flex items-center gap-1.5 hover:text-gold-bright transition-colors">
+              <MessageSquare size={13} /> 817-586-9634
             </a>
           </div>
         </div>
@@ -58,21 +58,21 @@ export default function Header() {
       <motion.header
         className={`sticky top-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-white/80 backdrop-blur-xl border-b border-beige shadow-[0_4px_30px_rgba(0,0,0,0.06)]'
-            : 'bg-offwhite border-b border-beige/50'
+            ? 'bg-base/80 backdrop-blur-xl border-b border-border shadow-[0_4px_30px_rgba(0,0,0,0.4)]'
+            : 'bg-base/60 backdrop-blur-md border-b border-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-[72px]">
           <Link href="/" className="flex flex-col group">
-            <span className="font-serif text-xl font-bold text-charcoal tracking-tight group-hover:text-bronze transition-colors">Fort Worth Expert</span>
-            <span className="text-[11px] text-charcoal-light tracking-[0.15em] uppercase -mt-0.5">Automotive Locksmith</span>
+            <span className="font-serif text-xl font-bold text-text tracking-tight group-hover:text-gold-bright transition-colors">Fort Worth Expert</span>
+            <span className="text-[10px] text-gold-bright tracking-[0.2em] uppercase -mt-0.5 font-semibold">Automotive Locksmith</span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-7">
             {navItems.map((item) => (
               item.children ? (
                 <div key={item.label} className="relative" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
-                  <button className="flex items-center gap-1 text-sm font-medium text-charcoal-light hover:text-charcoal transition-colors">
+                  <button className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-text transition-colors">
                     {item.label} <ChevronDown size={14} className={`transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                   <AnimatePresence>
@@ -84,9 +84,9 @@ export default function Header() {
                         transition={{ duration: 0.2 }}
                         className="absolute top-full left-0 pt-2 w-72"
                       >
-                        <div className="bg-white/95 backdrop-blur-xl rounded-xl border border-beige py-2 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+                        <div className="panel-dark py-2 shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
                           {item.children.map((child) => (
-                            <Link key={child.href} href={child.href} className="block px-4 py-2.5 text-sm text-charcoal-light hover:text-bronze hover:bg-beige/30 transition-colors">
+                            <Link key={child.href} href={child.href} className="block px-4 py-2.5 text-sm text-text-muted hover:text-gold-bright hover:bg-white/[0.03] transition-colors">
                               {child.label}
                             </Link>
                           ))}
@@ -96,9 +96,9 @@ export default function Header() {
                   </AnimatePresence>
                 </div>
               ) : (
-                <Link key={item.href} href={item.href} className="text-sm font-medium text-charcoal-light hover:text-charcoal transition-colors relative group">
+                <Link key={item.href} href={item.href} className="text-sm font-medium text-text-muted hover:text-text transition-colors relative group">
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gold group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gold group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(212,175,55,0.6)]" />
                 </Link>
               )
             ))}
@@ -110,7 +110,7 @@ export default function Header() {
             </a>
           </div>
 
-          <button className="lg:hidden text-charcoal" onClick={() => setMobileOpen(!mobileOpen)}>
+          <button className="lg:hidden text-text" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
@@ -123,21 +123,21 @@ export default function Header() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-beige overflow-hidden"
+              className="lg:hidden bg-base/95 backdrop-blur-xl border-t border-border overflow-hidden"
             >
               <div className="px-4 py-4 space-y-1">
                 {navItems.map((item) => (
                   item.children ? (
                     <div key={item.label}>
-                      <div className="py-2.5 text-sm font-semibold text-bronze">{item.label}</div>
+                      <div className="py-2.5 text-xs font-semibold text-gold-bright tracking-[0.15em] uppercase">{item.label}</div>
                       {item.children.map((child) => (
-                        <Link key={child.href} href={child.href} onClick={() => setMobileOpen(false)} className="block pl-4 py-2 text-sm text-charcoal-light hover:text-charcoal">
+                        <Link key={child.href} href={child.href} onClick={() => setMobileOpen(false)} className="block pl-4 py-2 text-sm text-text-muted hover:text-text">
                           {child.label}
                         </Link>
                       ))}
                     </div>
                   ) : (
-                    <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm font-medium text-charcoal hover:text-bronze">
+                    <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm font-medium text-text hover:text-gold-bright">
                       {item.label}
                     </Link>
                   )

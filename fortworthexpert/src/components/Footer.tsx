@@ -37,7 +37,8 @@ const areaLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal border-t border-charcoal text-white/80">
+    <footer className="bg-elevated border-t border-border text-text-muted relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-40" />
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
