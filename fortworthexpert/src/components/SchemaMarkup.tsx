@@ -1,25 +1,30 @@
+import { serviceAreas, SERVICE_RADIUS_MILES } from '@/data/serviceAreas';
+
+const SITE_URL = 'https://fortworthlocksmithexperts.com';
+const PHONE = '817-842-1751';
+const TEXT_PHONE = '817-586-9634';
+
 export function LocalBusinessSchema() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'Locksmith',
+    '@type': ['Locksmith', 'AutomotiveBusiness', 'LocalBusiness'],
+    '@id': `${SITE_URL}/#business`,
     name: 'Fort Worth Expert Automotive Locksmith',
-    description: 'Advanced automotive locksmith services in Fort Worth, TX. Car key programming, immobilizer diagnostics, module programming, and emergency locksmith services.',
-    telephone: '817-842-1751',
-    url: 'https://fortworthlocksmithexperts.com',
-    areaServed: [
-      { '@type': 'City', name: 'Fort Worth', addressRegion: 'TX' },
-      { '@type': 'City', name: 'Arlington', addressRegion: 'TX' },
-      { '@type': 'City', name: 'North Richland Hills', addressRegion: 'TX' },
-      { '@type': 'City', name: 'Hurst', addressRegion: 'TX' },
-      { '@type': 'City', name: 'Bedford', addressRegion: 'TX' },
-      { '@type': 'City', name: 'Euless', addressRegion: 'TX' },
-      { '@type': 'City', name: 'Grapevine', addressRegion: 'TX' },
-      { '@type': 'City', name: 'Keller', addressRegion: 'TX' },
-    ],
+    alternateName: 'Fort Worth Expert',
+    description:
+      'Specialist mobile automotive locksmith in Fort Worth, TX. Dealer-grade car key programming, smart-key generation, immobilizer diagnostics, and module programming for all makes and models. Service within a 25-mile radius of Fort Worth.',
+    telephone: PHONE,
+    url: SITE_URL,
+    image: `${SITE_URL}/og-image.jpg`,
+    logo: `${SITE_URL}/logo.png`,
+    priceRange: '$$',
+    currenciesAccepted: 'USD',
+    paymentAccepted: 'Cash, Credit Card, Debit Card, Apple Pay, Google Pay, Venmo, Zelle',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Fort Worth',
       addressRegion: 'TX',
+      postalCode: '76102',
       addressCountry: 'US',
     },
     geo: {
@@ -27,23 +32,99 @@ export function LocalBusinessSchema() {
       latitude: 32.7555,
       longitude: -97.3308,
     },
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '07:00',
-      closes: '22:00',
+    serviceArea: {
+      '@type': 'GeoCircle',
+      geoMidpoint: {
+        '@type': 'GeoCoordinates',
+        latitude: 32.7555,
+        longitude: -97.3308,
+      },
+      geoRadius: `${SERVICE_RADIUS_MILES * 1609.34}`, // miles → meters
     },
-    priceRange: '$$',
-    image: 'https://fortworthlocksmithexperts.com/og-image.jpg',
+    areaServed: serviceAreas.map((c) => ({
+      '@type': 'City',
+      name: c.name,
+      addressRegion: 'TX',
+      addressCountry: 'US',
+    })),
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: PHONE,
+        contactType: 'customer service',
+        areaServed: 'US-TX',
+        availableLanguage: ['English', 'Spanish'],
+        contactOption: 'TollFree',
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: TEXT_PHONE,
+        contactType: 'sales',
+        areaServed: 'US-TX',
+        availableLanguage: ['English', 'Spanish'],
+      },
+    ],
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '07:00',
+        closes: '22:00',
+      },
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '500',
+      bestRating: '5',
+      worstRating: '1',
+    },
     serviceType: [
+      'Automotive Locksmith',
       'Car Key Programming',
       'Car Key Replacement',
+      'Smart Key Programming',
       'Key Fob Programming',
+      'Transponder Key Programming',
       'Ignition Repair',
+      'Ignition Cylinder Replacement',
       'Immobilizer Diagnostics',
       'Module Programming',
-      'Emergency Locksmith',
+      'BCM Programming',
+      'KVM Module Repair',
+      'BMW FEM/CAS Programming',
+      'Mercedes EZS/ESL Repair',
+      'European Car Locksmith',
+      'Emergency Lockout Service',
+      'All Keys Lost Programming',
     ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Automotive Locksmith Services',
+      itemListElement: [
+        { '@type': 'Offer', name: 'Car Key Replacement', price: '150', priceCurrency: 'USD' },
+        { '@type': 'Offer', name: 'Smart Key Programming', price: '250', priceCurrency: 'USD' },
+        { '@type': 'Offer', name: 'Ignition Repair', price: '180', priceCurrency: 'USD' },
+        { '@type': 'Offer', name: 'Module Programming', price: '250', priceCurrency: 'USD' },
+        { '@type': 'Offer', name: 'Emergency Lockout', price: '65', priceCurrency: 'USD' },
+      ],
+    },
+    sameAs: [
+      'https://www.google.com/maps',
+      'https://www.facebook.com/',
+      'https://www.yelp.com/',
+    ],
+    knowsAbout: [
+      'Automotive Security Systems',
+      'Vehicle Immobilizers',
+      'Transponder Key Programming',
+      'CAN-bus Diagnostics',
+      'BMW FEM CAS EWS Modules',
+      'Mercedes EZS ESL FBS',
+      'Audi VW Component Protection',
+      'Push-to-Start Smart Keys',
+    ],
+    slogan: 'Dealer-level automotive locksmith. Mobile. Same-day. Within 25 miles of Fort Worth.',
   };
 
   return (
@@ -66,6 +147,10 @@ export function FAQSchema({ items }: { items: { question: string; answer: string
         text: item.answer,
       },
     })),
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'h2', '.faq-question', '.faq-answer'],
+    },
   };
 
   return (
@@ -76,24 +161,62 @@ export function FAQSchema({ items }: { items: { question: string; answer: string
   );
 }
 
-export function ServiceSchema({ name, description }: { name: string; description: string }) {
-  const schema = {
+export function ServiceSchema({
+  name,
+  description,
+  priceFrom,
+  priceTo,
+}: {
+  name: string;
+  description: string;
+  priceFrom?: number;
+  priceTo?: number;
+}) {
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name,
     description,
     provider: {
       '@type': 'Locksmith',
+      '@id': `${SITE_URL}/#business`,
       name: 'Fort Worth Expert Automotive Locksmith',
-      telephone: '817-842-1751',
-      url: 'https://fortworthlocksmithexperts.com',
+      telephone: PHONE,
+      url: SITE_URL,
     },
+    serviceType: name,
     areaServed: {
-      '@type': 'City',
-      name: 'Fort Worth',
-      addressRegion: 'TX',
+      '@type': 'GeoCircle',
+      geoMidpoint: {
+        '@type': 'GeoCoordinates',
+        latitude: 32.7555,
+        longitude: -97.3308,
+      },
+      geoRadius: `${SERVICE_RADIUS_MILES * 1609.34}`,
+    },
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'Vehicle Owners',
+      geographicArea: {
+        '@type': 'AdministrativeArea',
+        name: 'Fort Worth Metropolitan Area, TX',
+      },
     },
   };
+
+  if (priceFrom) {
+    schema.offers = {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'USD',
+        minPrice: priceFrom,
+        maxPrice: priceTo ?? priceFrom,
+      },
+      availability: 'https://schema.org/InStock',
+    };
+  }
 
   return (
     <script
@@ -101,4 +224,36 @@ export function ServiceSchema({ name, description }: { name: string; description
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   );
+}
+
+export function BreadcrumbSchema({ items }: { items: { name: string; url: string }[] }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      item: item.url.startsWith('http') ? item.url : `${SITE_URL}${item.url}`,
+    })),
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
+}
+
+export function WebsiteSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: 'Fort Worth Expert Automotive Locksmith',
+    publisher: { '@id': `${SITE_URL}/#business` },
+    inLanguage: 'en-US',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${SITE_URL}/?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 }

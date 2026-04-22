@@ -107,7 +107,11 @@ export default function Footer() {
             <p className="text-xs text-white/40">
               © {new Date().getFullYear()} Fort Worth Expert Automotive Locksmith. All rights reserved.
             </p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center">
+              <Link href="/about" className="text-xs text-white/40 hover:text-gold transition-colors">About</Link>
+              <Link href="/pricing" className="text-xs text-white/40 hover:text-gold transition-colors">Pricing</Link>
+              <Link href="/reviews" className="text-xs text-white/40 hover:text-gold transition-colors">Reviews</Link>
+              <Link href="/faq" className="text-xs text-white/40 hover:text-gold transition-colors">FAQ</Link>
               <Link href="/contact" className="text-xs text-white/40 hover:text-gold transition-colors">Contact</Link>
               <Link href="/service-areas" className="text-xs text-white/40 hover:text-gold transition-colors">Service Areas</Link>
               <Link href="/brands" className="text-xs text-white/40 hover:text-gold transition-colors">Brands</Link>

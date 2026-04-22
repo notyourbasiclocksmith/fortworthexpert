@@ -58,6 +58,19 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   color: var(--color-text);
   letter-spacing: -0.015em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Fluid hero typography that NEVER overflows */
+.hero-title {
+  font-size: clamp(2rem, 5.5vw + 1rem, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.hero-sub {
+  font-size: clamp(1rem, 1.25vw + 0.55rem, 1.25rem);
+  line-height: 1.6;
 }
 
 ::selection {
@@ -361,6 +374,89 @@ h1, h2, h3, h4, h5, h6 {
 .section-charcoal {
   background: var(--color-elevated);
   color: var(--color-text);
+}
+
+/* Emergency CTA — pulsing red */
+.btn-emergency {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.75rem;
+  background: linear-gradient(135deg, #DC2626, #B91C1C);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  border: 1px solid rgba(220,38,38,0.5);
+  box-shadow: 0 4px 14px rgba(220,38,38,0.28);
+  white-space: nowrap;
+  position: relative;
+}
+.btn-emergency::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 13px;
+  background: rgba(220,38,38,0.35);
+  z-index: -1;
+  animation: emergencyPulse 2s ease-in-out infinite;
+}
+@keyframes emergencyPulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.04); }
+}
+.btn-emergency:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(220,38,38,0.42);
+}
+
+/* Marquee for brand carousel */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee {
+  display: flex;
+  gap: 3rem;
+  animation: marquee 40s linear infinite;
+  width: max-content;
+  align-items: center;
+}
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+/* Safe area + mobile sticky bottom CTA spacing */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 76px;
+  }
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--color-bronze);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Stat counter style */
+.stat-number {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 4vw + 1rem, 4rem);
+  line-height: 1;
+  background: linear-gradient(135deg, var(--color-bronze-dark), var(--color-gold) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ── DECORATIVE SERIF ACCENT ── */

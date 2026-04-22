@@ -21,6 +21,10 @@ const navItems = [
   },
   { label: 'Brands', href: '/brands' },
   { label: 'Service Areas', href: '/service-areas' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Reviews', href: '/reviews' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
 
